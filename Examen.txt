@@ -1,0 +1,113 @@
+1)
+A) Sa se creeze in pgadmin o baza de date numita examen. Să se creeze un tabel în baza de date cu numele carti și cu câmpurile:
+- id (cheie primară, auto increment),
+- titlu de tip șir variabil de caractere de lungime 100 de caractere, nenul,
+- nume_autor de tip șir variabil de caractere de lungime 80 de caractere, nenul,
+- an_publicare de tip int,
+- tema de tip varchar de maxim 50 de caractere,
+- scoruri de tip varchar de maxim 50 de caractere (reprezentând rating-ul cărții, de exemplu '9,8,7,10'),
+- data_adaugarii de tip timestamp cu valoarea implicită egală cu timpul curent.
+Să se insereze cărțile din "anexe" în tabel.
+
+B) Să se realizeze o pagină (/carti) care afișează toate cărțile în următorul format:
+Datele fiecărei cărți vor fi puse într-o sectiune. Titlul cărții va fi pus într-un heading de nivel 2. Va exista un element de tip details, care are drept sumar textul "observatii" si detali ivor contine: un paragraf cu autorul și anul publicării, iar tema într-un alt paragraf. Detaliile sunt implict deschise (vizibile).
+C) Scorurile se afiseaza într-un tabel de un singur rand si atatea coloane cate scoruri exista. Sub tabel se va mai afișa un paragraf cu scorul minim si cel maxim.
+D) Pagina se poate accesa și cu /carti  urmat de "?" si parametrii optionali an_minim si an_maxim. Daca an_minim lipseste, se considera 0. Daca an_maxim lipseste se considera 9999. /carti?an_minim=2003&an_maxim=2010 ar afisa toate cartile publicate intre 2003 si 2010 inclusiv.
+
+2) A) Să se stilizeze pagina astfel: cărțile să fie așezate într-un grid CSS de 3 coloane (de dimensiuni egale, cu spațiu între randuri de 10px), pentru care backgroundul celulelor urmează următorul pattern, din 3 în 3 rânduri (unde fiecare c_i e alta culoare), deci patternul se repetă după fiecare 9 celule din grid:
+
+c1
+c2
+c4
+c1
+c3
+c4
+c1
+c2
+c4
+
+
+
+B) Celulele din grid vor fi numerotate cu ajutorul unui counter CSS, astfel fiind vizibil numărul de ordine al fiecărei cărți.
+C)Atunci când se redimensionează pagina pentru ecran mediu, celulele din grid vor fi așezate pe două coloane de dimensiuni egale.
+D)În tabelul de scoruri, când venim cu cursorul pe sectiunea unei cărți, să se coloreze backgroundul primei si ultimei celule în mod treptat de la transparent în albastru pe parcursul a 4 secunde, și să se scaleze textul cu 20%
+
+3) A) În pagină va exista un select cu valorile "ascendent, descendent" și lângă el un buton cu textul "Sortează", care va sorta cărțile (ascendent sau descendent în funcție de selecție) după numele autorului
+B) Dacă numele sunt egale, cartile se sorteaza după scorul minm
+C) De asemenea, va fi un input de tip range și un buton "Filtrează", care va afișa doar cărțile al căror sscor mediu este peste valoarea din range (valoarea selectata in range se va afisa alaturi de range)
+D) La apasarea tastei r, toate scorurile cărților devin aleatoare (doar în pagină, nu și în baza de date).
+
+4) 
+A) Se va memora în localStorage câte filtrări și câte sortări s-au făcut. Va exista un paragraf (la începutul paginii) care, la încărcarea paginii, va afișa numărul anterior de sortări și respectiv cel de filtrări. 
+B) Paragraful trebuie, de asemenea, actualizat la fiecare operațiune. Lângă paragraf va fi un buton care resetează localStorage-ul. 
+C) Cu ajutorul unui cookie, la click pe butonul de sortare, nu se va permite o nouă sortare dacă nu au trecut minim 10 secunde de la ultima sortare. Dacă se încearcă o sortare până să expire cookie-ul, se va afișa un mesaj cu textul: "Nu au trecut încă 10 secunde". 
+D) După 10 secunde, se deblochează și filtrarea/sortarea se resetează (reapar toate cărțile și în ordinea inițială; este admisă și rezolvarea printr-un refresh forțat prin program).
+
+5) 
+A) Customizați Bootstrap folosind variabila SCSS potrivită, astfel încât elementele setate cu culoarea temei secondary să fie roșu închis. Creați un buton cu clase Bootstrap astfel încât să fie de dimensiune mica și cu tema secondary. 
+B) Creați și un tabel cu 4 rânduri și 2 coloane inițial cu textul "-". Rândurile tabelului vor fi de culori alternate - se va realiza acest lucru folosind Bootstrap. 
+C) La click pe buton se vor lua aleator 4 titluri de cărți și autorii lor și se vor completa în tabel (pe prima coloană sunt titlurile și pe a doua autorii). 
+D) După click, butonul va dispărea și va rămâne ascuns și la refresh până trece 1 minut de la click pe el (după acest minut, la următorul refresh va redeveni vizibil). Realizați funcționalitatea de ascundere/apariție cu ajutorul unui cookie.
+
+
+
+
+
+
+
+-------------------------------------------------
+
+DROP TYPE IF EXISTS categ_carti;
+
+CREATE TYPE categ_carti AS ENUM( 'Psihologic', 'Distopie', 'Clasic', 'Roman', 'Teatru', 'Mister', 'Aventură', 'Non-ficțiune', 'Fantezie');
+
+CREATE TABLE IF NOT EXISTS carti (
+   id SERIAL PRIMARY KEY,
+   titlu VARCHAR(200) NOT NULL,
+   autor VARCHAR(100) NOT NULL,
+   an_publicare INT,
+   gen categ_carti,
+   rating VARCHAR(50)
+);
+
+INSERT INTO carti (titlu, autor, an_publicare, gen, rating)
+VALUES
+('Mândrie și prejudecată', 'Jane Austen', 1813, 'Clasic', '9,8,10,9'),
+('1984', 'George Orwell', 1949, 'Distopie', '10,9,8,10'),
+('Crime și pedeapsă', 'Feodor Dostoievski', 1866, 'Psihologic', '9,9,8,10'),
+('Marele Gatsby', 'F. Scott Fitzgerald', 1925, 'Roman', '8,7,9,10'),
+('Anna Karenina', 'Lev Tolstoi', 1877, 'Clasic', '10,10,9,9'),
+('Don Quijote', 'Miguel de Cervantes', 1605, 'Aventură', '7,8,9,10'),
+('Orbitor', 'Mircea Cărtărescu', 2007, 'Fantezie', '10,9,10,9'),
+('Sapiens', 'Yuval Noah Harari', 2011, 'Non-ficțiune', '9,8,9,10'),
+('Hamlet', 'William Shakespeare', 1603, 'Teatru', '10,10,10,9'),
+('Crima din Orient Express', 'Agatha Christie', 1934, 'Mister', '8,9,10,9');
+---------------------------------------
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sas;
+
+--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO carti (titlu, nume_autor, an_publicare, tema, scoruri)
+VALUES
+('Mândrie și prejudecată', 'Jane Austen', 1813, 'Clasic', '9,8,10,9'),
+('1984', 'George Orwell', 1949, 'Distopie', '10,9,8,10'),
+('Crime și pedeapsă', 'Feodor Dostoievski', 1866, 'Psihologic', '9,9,8,10'),
+('Marele Gatsby', 'F. Scott Fitzgerald', 1925, 'Roman', '8,7,9,10'),
+('Anna Karenina', 'Lev Tolstoi', 1877, 'Clasic', '10,10,9,9'),
+('Don Quijote', 'Miguel de Cervantes', 1605, 'Aventură', '7,8,9,10'),
+('Orbitor', 'Mircea Cărtărescu', 2007, 'Fantezie', '10,9,10,9'),
+('Sapiens', 'Yuval Noah Harari', 2011, 'Non-ficțiune', '9,8,9,10'),
+('Hamlet', 'William Shakespeare', 1603, 'Teatru', '10,10,10,9'),
+('Crima din Orient Express', 'Agatha Christie', 1934, 'Mister', '8,9,10,9');
+

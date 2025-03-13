@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/examen.css" type="text/css"/>
+    <meta name="author" content="Sas Adrian-Raul">
+    <meta name="keywords" content="PC gaming, Configurare PC, Plăci video, Periferice, Reduceri PC">
+    <meta name="description" content="Magazin online dedicat PC-urilor personalizate pentru gaming, oferind posibilitatea configurării personalizate.">
+    <title>Gaming-Room</title>
+</head>
+<body>
+>
+<main>
+    <section id="carti">
+        <h1>Lista Cărților</h1>
+        
+        <% for (let carte of carti) { 
+            let scoruri = carte.scoruri? carte.scoruri.split(',').map(s => parseFloat(s)) : [];
+            let scorMin = scoruri.length > 0 ? Math.min(...scoruri) : "N/A";
+            let scorMax = scoruri.length > 0 ? Math.max(...scoruri) : "N/A";
+        %>
+            <section class="carte">
+                <h2><%- carte.titlu %></h2>
+
+                <details open>
+                    <summary>Observații</summary>
+                    <p><strong>Autor:</strong> <%- carte.autor %></p>
+                    <p><strong>An publicare:</strong> <%- carte.an_publicare %></p>
+                    <p><strong>Tema:</strong> <%- carte.gen || "Necunoscut" %></p>
+                </details>
+
+                
+                <% if (scoruri.length > 0) { %>
+                    <table class="scoruri">
+                        <tr>
+                            <% for (let scor of scoruri) { %>
+                                <td><%- scor %></td>
+                            <% } %>
+                        </tr>
+                    </table>
+                    <p><strong>Scor minim:</strong> <%- scorMin %></p>
+                    <p><strong>Scor maxim:</strong> <%- scorMax %></p>
+                <% } else { %>
+                    <p><em>Nu există scoruri disponibile.</em></p>
+                <% } %>
+            </section>
+        <% } %>
+
+    </section>
+</main>
+
+<%- include("../fragmente/footer") %>
+</body>
+</html>

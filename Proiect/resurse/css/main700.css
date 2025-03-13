@@ -1,0 +1,93 @@
+html {
+    font-size: 9px;
+    transition: font-size 0.4s ease-in-out; /* Scrisul va fi mai mic pe ecranele mici */
+  }
+
+  /* Dezactivăm animațiile pe ecranele mici */
+* {
+    animation: none !important;
+    transition: none !important;
+  }
+#grid-pagina {
+    --grid-gap: 0.7rem;
+    grid-template-areas:    "z-prezentare"
+                            "z-calendar"
+                            "z-tabel"
+                            "z-anunturi"
+                            "z-configurare"
+                            "z-site_server"
+                            "z-users"
+                            "z-date_useri";
+}
+header {
+  display: none;
+}
+
+
+
+
+.navbar1 {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: #000000;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: 600px;
+  text-size-adjust: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+.menu a:hover {
+  background-color: #000000;
+}
+.submenu {
+  display: none;
+  background-color: #000000;
+}
+.submenu a {
+  padding-left: 40px;
+}
+.menu-item {
+  justify-content: center;
+  align-items: center;
+}
+.menu-item:hover .submenu {
+  display: block;
+}
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + .menu {
+  display: flex;
+}
+

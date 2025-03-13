@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("fragmente/head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/examen.css" type="text/css"/>
+    <meta name="author" content="Sas Adrian-Raul">
+    <meta name="keywords" content="PC gaming, Configurare PC, Plăci video, Periferice, Reduceri PC">
+    <meta name="description" content="Magazin online dedicat PC-urilor personalizate pentru gaming, oferind posibilitatea configurării personalizate.">
+    <title>Gaming-Room</title>
+    <script src="/resurse/js/cartiscript.js"></script>
+</head>
+<body>
+<header>
+    <%- include("fragmente/nav") %>  
+</header>
+<main>
+    <label for="sortare">Sortare după autor:</label>
+    <select id="sortare">
+        <option value="ascendent">Ascendent</option>
+        <option value="descendent">Descendent</option>
+    </select>
+    <button id="sorteazaBtn">Sortează</button>
+
+    <label for="range">Filtrează scoruri medii:</label>
+    <input type="range" id="range" min="0" max="10" step="0.1">
+    <span id="valoare-range">5</span>
+    <button id="filtreazaBtn">Filtrează</button>
+    
+    <section id="carti">
+        <h1>Lista Cărților</h1>
+        <div class="carti-container" id="carti-lista">
+            <% for (let carte of carti) { 
+                let scoruri = carte.scoruri? carte.scoruri.split(',').map(s => parseFloat(s)) : [];
+                let scorMin = scoruri.length > 0 ? Math.min(...scoruri) : "N/A";
+                let scorMax = scoruri.length > 0 ? Math.max(...scoruri) : "N/A";
+            %>
+                <section class="carte">
+                    <h2><%- carte.titlu %></h2>
+
+                    <details open>
+                        <summary>Observații</summary>
+                        <p><strong>Autor:</strong> <%- carte.nume_autor %></p>
+                        <p>An publicare: <%- carte.an_publicare %></p>
+                        <p>Tema: <%- carte.tema || "Necunoscut" %></p>
+                    </details>
+
+                    <% if (scoruri.length > 0) { %>
+                        <table class="scoruri">
+                            <tr>
+                                <% for (let scor of scoruri) { %>
+                                    <td><%- scor %></td>
+                                <% } %>
+                            </tr>
+                        </table>
+                        <p>Scor minim: <%- scorMin %></p>
+                        <p>Scor maxim: <%- scorMax %></p>
+                    <% } else { %>
+                        <p><em>Nu există scoruri disponibile.</em></p>
+                    <% } %>
+                </section>
+            <% } %>
+        </div> <!-- Încheiem containerul pentru cărți -->
+    </section>
+</main>
+
+<%- include("fragmente/footer") %>
+</body>
+</html>

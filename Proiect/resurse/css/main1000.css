@@ -1,0 +1,21 @@
+html {
+    font-size: 10px; 
+    transition: font-size 0.4s ease-in-out;
+}
+body {
+    size: 50px;
+}
+#grid-pagina {
+    --grid-gap: 0.7rem;
+    grid-template-areas:    "z-prezentare z-prezentare z-prezentare "
+                            "z-calendar z-tabel z-anunturi"
+                            "z-configurare z-configurare z-configurare"
+                            "z-site_server  z-users z-date_useri";
+}
+.navbar1 {
+    display: none;
+}
+
+#grid-galerie {
+    grid-template-columns: repeat(2, 1fr);
+}

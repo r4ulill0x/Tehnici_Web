@@ -1,0 +1,90 @@
+#banner-printare,
+#watermark {
+    display: none;
+}
+
+@media print {
+    #banner-printare {
+        display: block;
+        position: fixed;
+        align-items: center;
+        top: 0;
+        width: 80%;
+        padding: 10px;
+        justify-content: center;
+        border-style: dotted;
+        border-color: #000000;
+    }
+
+
+
+
+    picture,
+    .container-iframe,
+    .triangle,
+    .paranteza,
+    #link-top {
+        display: none;
+    }
+
+
+
+
+
+    #grid-pagina {
+        display: block;
+    }
+
+
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+
+
+
+    h1 {
+        margin-top: 50%;
+        margin-bottom: 50%;
+        margin-left: 50%;
+        margin-right: 50%;
+        font-size: 30px;
+        text-decoration: underline;
+    }
+    .navbar,
+    .menu {
+        display: none;
+    }
+    header {
+        page-break-after: always;
+    }
+    footer {
+        page-break-before: always;
+    }
+
+
+    #watermark {
+        display: flex;
+        width: 100px;
+        height: 2cm;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: var(--secondary-4);
+        border-style: double;
+        opacity: 0.65;
+    }
+
+
+    
+    @page:left{
+		margin-left:2.5cm;
+		margin-right:0.5cm;
+	}
+	@page:right{
+		margin-right:2.5cm;
+		margin-left:0.5cm;
+	}
+}

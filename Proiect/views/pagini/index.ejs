@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head.ejs") %>
+    
+    <meta name="author" content="Sas Adrian-Raul">
+    <meta name="keywords" content="PC gaming, Configurare PC, Plăci video, Periferice, Reduceri PC">
+    <meta name="description" content="Magazin online dedicat PC-urilor personalizate pentru gaming, oferind posibilitatea configurării personalizate.">
+    <title>Gaming-Room</title>
+    <style>
+        :root {
+            --primary-color: #E0040B;
+            --secondary-1: #F4571B;
+            --secondary-2: #7A20E8; 
+            --secondary-3: #E10192;
+            --secondary-4: #000000;
+            --colt-rotunjit:15px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="navbar1">
+        <label for="menu-toggle" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <input type="checkbox" id="menu-toggle">
+        <div class="menu">
+            <div class="menu-item">
+                <a href="#" class="fa-solid fa-house"></a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Configurare PC</a>
+                <div class="submenu">
+                    <a href="#configurare">Ghid Configurare</a>
+                    <a href="#componente">Componente</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#periferice">Periferice</a>
+                <div class="submenu">
+                    <a href="#mouse">Mouse</a>
+                    <a href="#tastaturi">Tastaturi</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#reduceri">Oferte Speciale</a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <%- include("../fragmente/nav.ejs") %>
+    </header>
+    <br>
+    <main>
+        <div id="grid-pagina">
+            <section id="prezentare">
+                <h2>Gaming-Room Info</h2>
+                <p><%- locals.ip %></p>
+                <p>Dacă sunteți în căutarea celui mai ieftin PC de gaming realizat cu produse inferioare și o calitate îndoielnică, ați putea la fel de bine să plecați acum. Gaming-Room folosește doar componente de cea mai înaltă calitate disponibile pentru PC-uri pentru jocuri. Fiecare PC de gaming și laptop pentru gaming personalizat este asamblat chiar aici, în Turda, de tehnicieni și ingineri de asamblare cu înaltă calificare și incredibil de calificați. Sigur, putem asambla PC-urile noastre de jocuri premiate în străinătate pentru mai puțin. De fapt, asta fac majoritatea concurenților noștri. Cu toate acestea, alegem să asamblam toate PC-urile noastre pentru jocuri chiar aici, deoarece ne oferă cel mai bun control asupra producției, performanței și calității generale. Și suntem încântați să angajăm doar cei mai buni constructori de PC-uri din țară.</p>
+            </section>
+            <section id="stilizare-tabel"><br>
+                <h2>Cele mai cumparate</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Procesor</th>
+                                <th>Placă Video</th>
+                                <th>Preț</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gaming Beast X</td>
+                                <td>Intel Core i9-12900K</td>
+                                <td>NVIDIA RTX 4090</td>
+                                <td>12,000 RON</td>
+                            </tr>
+                            <tr>
+                                <td>Rogue Slayer</td>
+                                <td>AMD Ryzen 9 7950X</td>
+                                <td>NVIDIA RTX 4080</td>
+                                <td>10,000 RON</td>
+                            </tr>
+                            <tr>
+                                <td>Shadow Hunter</td>
+                                <td>Intel Core i7-13700K</td>
+                                <td>AMD Radeon RX 7900 XTX</td>
+                                <td>8,500 RON</td>
+                            </tr>
+                            <tr>
+                                <td>CyberStorm Z</td>
+                                <td>AMD Ryzen 7 7800X</td>
+                                <td>NVIDIA RTX 4070</td>
+                                <td>7,000 RON</td>
+                            </tr>
+                            <tr>
+                                <td>Phantom Rig</td>
+                                <td>Intel Core i5-12600K</td>
+                                <td>AMD Radeon RX 7600</td>
+                                <td>5,500 RON</td>
+                            </tr>
+                            <tr>
+                                <td>Stealth Machine</td>
+                                <td>AMD Ryzen 5 7600</td>
+                                <td>NVIDIA RTX 4060</td>
+                                <td>4,800 RON</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">Total Vânzări</td>
+                                <td>60,000</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </section>
+            <section id="calendar">
+                <section class="three">
+                    <h2>Calendar</h2>
+                    <div class="calendar">
+
+                      <div class="day">Sun</div>
+                      <div class="day">Mon</div>
+                      <div class="day">Tue</div>
+                      <div class="day">Wed</div>
+                      <div class="day">Thu</div>
+                      <div class="day">Fri</div>
+                      <div class="day">Sat</div>
+                      
+                      <div class="day">1</div>
+                      <div class="day">2</div>
+                      <div class="day">3</div>
+                      <div class="day">4</div>
+                      <div class="day">5</div>
+                      <div class="day">6</div>
+                      <div class="day">7</div>
+                      <div class="day">8</div>
+                      <div class="day">9</div>
+                      <div class="day">10</div>
+                      <div class="day">11</div>
+                      <div class="day">12</div>
+                      <div class="day">13</div>
+                      <div class="day">14</div>
+                      <div class="day">15</div>
+                      <div class="day">16</div>
+                      <div class="day">17</div>
+                      <div class="day">18</div>
+                      <div class="day">19</div>
+                      <div class="day">20</div>
+                      <div class="day">21</div>
+                      <div class="day">22</div>
+                      <div class="day">23</div>
+                      <div class="day">24</div>
+                      <div class="day">25</div>
+                      <div class="day">26</div>
+                      <div class="day">27</div>
+                      <div class="day">28</div>
+                      <div class="day">29</div>
+                      <div class="day">30</div>
+                      <div class="day">31</div>
+                    </div>
+                  </section>
+                  
+            </section>
+            <section id="anunturi"><br>
+                <h2>Anunturi</h2>
+                <p>Dacă sunteți în căutarea unui PC de gaming care să satisfacă nevoile dvs., contactați echipa noastră pentru mai multe informații despre produsele prezentate sau pentru oferte personalizate. Reduceri speciale disponibile pentru o perioadă limitată!</p>
+            </section>
+
+            <section id="users">
+                <h2>Utilizatori Online</h2>
+                <p>În prezent, sunt <strong>45</strong> utilizatori online.</p>
+            </section>
+            <section id="date_useri">
+                <h2>Statistici</h2>
+                <p>Cel mai activ cumpărător: <strong>Maria Popescu</strong></p>
+                <p>Cel mai cumpărat produs: <strong>Gaming Beast X</strong></p>
+                <p>Cel mai cumpărat mouse: <strong>Logitech G502 HERO</strong></p>
+                <p>Cel mai cumpărat monitor: <strong>ASUS ROG Swift PG259QN</strong></p>
+            </section>
+            <section id="site_server">
+                <h2>Server-ul Gaming-Room</h2>
+                <p>Acest site este găzduit pe un server performant, optimizat pentru încărcare rapidă și securitate avansată. Utilizăm cele mai noi tehnologii pentru a asigura o experiență fluidă utilizatorilor. Serverul rulează pe o infrastructură bazată pe Linux și dispune de backup-uri zilnice pentru protecția datelor.</p>
+            </section>
+            <section id="configurare">
+                <h2>Configurare PC pentru Gaming</h2><br>
+                <a href="/resurse/ghid.txt" download="ghid.txt">Descarcă Ghid-ul</a>
+                <p>Configurează-ți propriul PC personalizat folosind componente de top, inclusiv plăci video, procesoare și multe altele. Asigurăm compatibilitate perfectă pentru o experiență de gaming fără probleme.</p>
+            </section>
+        </div>
+        <section id="componente">
+            <h2>Componente pentru PC-uri</h2>
+            <p>Alege dintre cele mai noi <b>plăci video</b> și <i>procesoare</i> performante pentru a construi sistemul ideal pentru gaming.</p>
+                <div class="container-iframe">
+                
+                    <div class="taburi-iframe">
+                        <a href="https://www.youtube.com/embed/ruIyD45oRkw?si=2dsHE8gruXbliCGC" target="ifr-video">1. Procesoare (Intel i7, Ryzen 9)</a>
+                        <a href="https://www.youtube.com/embed/CZYor0P9-uc?si=220IhRBFeRVLkeEf" target="ifr-video">2. Plăci Video (RTX 3080, RTX 4090)</a>
+                        <a href="https://www.youtube.com/embed/fhPYpgLJKtQ?si=iH40sCxMQrHcDe74" target="ifr-video">3. Memorii RAM și SSD-uri rapide</a>
+                    </div>
+
+                    <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/ruIyD45oRkw?si=2dsHE8gruXbliCGC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+        </section>
+        <section id="periferice">
+            <h2>Periferice și Accesorii</h2>
+            <p>Descoperă cele mai bune <b>mouse-uri</b> și <b>tastaturi</b> pentru gaming, alături de <i>monitoare</i> și scaune ergonomice.</p>
+            <figure>
+                <img class="wide" src="/resurse/imagini/monitor_ultrawide.webp" alt="Monitor de gaming">
+                <figcaption>Monitor de gaming ultra-wide, ideal pentru o experiență de joc completă.</figcaption>
+            </figure>
+            <p>Alte monitoare <a href="https://altex.ro/monitoare-gaming/cpl/" target="_blank">aici</a></p>
+        </section>
+        <section id="galerie-statica">
+            <h2>Galerie</h2><br>
+            <a href="/galerie">Pentru a vizualiza galeria, apasa aici!</a>
+        </section>
+        <section id="reduceri">
+            <h2>Oferte Speciale</h2>
+            <details>
+                <summary>Reducerile săptămânii</summary>
+                <p>Configurații PC reduse cu până la 20%. Licențe software gratuite incluse la achiziționarea unui PC complet.</p>
+            </details>
+            <details>
+                <summary>Reduceri la componente</summary>
+                <p>Alege componente cu preț redus pentru a-ți construi PC-ul perfect la prețuri accesibile.</p>
+            </details>
+        </section>
+    </main>
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>
+
+
+

@@ -1,0 +1,11 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with
+(
+    $primary: #c0050b,
+    $secondary: #7A20E8,
+    $link-color: #7A20E8,
+    $border-radius: 10px,
+    $h1-font-size: 12px,
+    $font-family-base: "Lucida Sans Unicode",
+    $table-bg: #fff,
+)
+

@@ -1,0 +1,89 @@
+Adaugati si un favicon de latime si inaltime 64px setând toate atributele corespunzatoare (si cel care indica referinta si cel care indica dimensiunile). Puteti folosi orice editor grafic pentru a redimensiona faviconul.
+ 
+
+ 
+Faceti astfel incat primele doua elemente details sa fie deja deschise implicit.
+ 
+ 
+Adaugati sub iframe-ul cu linkurile asociate inca un link care se deschide in interiorul iframe-ului si duce catre pagina facultatii.
+ 
+ 
+ 
+Adaugati o noua sursa in tagul picture existent care sa se afiseze doar pe latime de ecran intre 500px si 800px.
+
+
+
+Etapa 2:
+ 
+Layout
+
+Inversati intre ele zonele 4 si 6, in cadrul gridului
+ 
+ 
+Iframe
+ 
+Afisati butoanele din iframe in ordine inversata folosind doar css.
+ 
+ 
+Tabel
+ 
+Atunci cand se vine cu cursorul pe antetul tabelului dimensiunea textului din celule creste de 2 ori.
+ 
+ 
+Link-top
+
+ 
+La venirea cu cursorul pe linkul catre începutul paginii acesta isi va dubla treptat dimensiunea.
+
+
+
+
+Etapa 3 - Meniu
+ 
+ecran mare
+Atunci cand se vine cu cursorul pe un buton din submeniu, sa se schimbe culoarea acestuia in mod treptat si, de asemenea, sa apara si un outline in jurul butonului, insa outline-ul  sa apara brusc nu treptat.
+ 
+ 
+ 
+ecran mic
+ 
+Faceti astfel incat la aparitia meniului pe ecran mic, sa isi schimbe si culoarea de background de la o culoare aleasa de voi la cea pe care o are meniul acum.
+ 
+ 
+ 
+Css print:
+Faceti astfel incat anul si grupa voastra sa apara pe toate paginile printate in coltul dreapta-sus.
+
+
+Etapa 4
+ 
+ 
+ 
+Faceti astfel incat sa se afiseze eroarea 400 pentru orice cerere care incepe cu cuvantul examen, de exemplu si /examen si /examen_123 si /examen_a dau eroarea 400
+ 
+ 
+Faceti ca orice fisier dintr-o cerere de forma /static/fisier sa fie cautat in folderul /resurse si transmis ca fisier static (calea lui se presupune a fi /resurse/fisier).
+ 
+ 
+Video
+
+Faceti astfel incat textul din subtitrari sa fie cu litere ingrosate
+ 
+ 
+Linkuri
+ 
+Faceti ca pata de culoare care apare pe linkuri sa aiba in centru o culoare c1 apoi in jurul culorii c1 sa fie culoarea c2 si apoi zona transparenta.
+
+
+Etapa 5
+ 
+Faceti astfel incat primele doua imagini din galerie sa apara inversate intre ele.
+ 
+ 
+Faceti astfel incat primele doua  imagini sa fie numerotate de counterul css cu 1 si 2 iar de la a 3-a incolo cu litere mici :c,d,e,f... Daca nu se afiseaza sufiecinet imagini, veti modifica json-ul ca sa se afiseze.
+ 
+ 
+ 
+In cadrul customizarii bootstrap, schimbati font-size-ul pentru h2 sa fie de 20px.
+
+ 

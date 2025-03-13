@@ -1,0 +1,60 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier_imagine":"gaming_beastx.jpg",
+			"nume_poza":"Neuron",
+			"continut_alternativ":"Gaming Beast X",
+			"interval_zile":["luni","miercuri"]
+		},
+		{
+			"fisier_imagine":"rogue_slayer.jpg",
+			"nume_poza":"One",
+			"continut_alternativ":"Rogue Slayer",
+			"interval_zile":["luni", "miercuri"]
+	
+		},
+		{
+			"fisier_imagine":"cyber_storm_z.jpg",
+			"nume_poza":"Storm",
+			"continut_alternativ":"Cyber Storm Z",
+			"interval_zile":["luni", "miercuri"]
+		},
+		{
+			"fisier_imagine":"phantom_rig.jpg",
+			"nume_poza":"Phantom",
+			"continut_alternativ":"Phantom Rig",
+			"interval_zile":["sambata", "sambata"]
+		},
+		{
+			"fisier_imagine":"stealth_machine.jpg",
+			"nume_poza":"Stealth",
+			"continut_alternativ":"Stealth Machine",
+			"interval_zile":["luni", "miercuri"]
+		},
+		{
+			"fisier_imagine":"keysens.jpg",
+			"nume_poza":"Keyboard",
+			"continut_alternativ":"Keyboard Sens",
+			"interval_zile":["luni", "miercuri"]
+		},
+		{
+			"fisier_imagine":"shadow_hunter.jpg",
+			"nume_poza":"Hunter",
+			"continut_alternativ":"Shadow Hunter",
+			"interval_zile":["sambata", "sambata"]
+		},
+		{
+			"fisier_imagine":"keygens.jpg",
+			"nume_poza":"Keyboard2",
+			"continut_alternativ":"Keyboard Genesis",
+			"interval_zile":["luni", "miercuri"]
+		},
+		{
+			"fisier_imagine":"best_pc.jpg",
+			"nume_poza":"Phenom",
+			"continut_alternativ":"Phenom 2",
+			"interval_zile":["luni", "miercuri"]
+		}
+	]
+}

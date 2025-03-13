@@ -1,0 +1,161 @@
+
+
+.btn-primary {
+    background-color: #c0050b;
+    border-color: #c0050b;
+}
+
+.btn-primary:hover {
+    background-color: darken(#c0050b, 10%);
+    border-color: darken(#c0050b, 10%);
+}
+
+:root {
+    --primary-color: #E0040B;
+    --secondary-1: #F4571B;
+    --secondary-2: #7A20E8;
+    --secondary-3: #E10192;
+    --secondary-4: #000000;
+    --colt-rotunjit: 15px;
+}
+
+/* Stilizare pentru tabelul de scoruri */
+.scoruri {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scoruri td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc; /* Border pentru tabel */
+}
+
+/* Efecul de hover pe tabelul de scoruri */
+.carte:hover .scoruri td:first-child,
+.carte:hover .scoruri td:last-child {
+    background-color: rgba(0, 123, 255, 0); /* Transparent la început */
+    transition: background-color 4s ease-in-out; /* Animație graduală de 4 secunde */
+}
+
+.carte:hover .scoruri td:first-child {
+    background-color: rgba(0, 123, 255, 1); /* Schimbă background-ul la albastru pentru prima celulă */
+}
+
+.carte:hover .scoruri td:last-child {
+    background-color: rgba(0, 123, 255, 1); /* Schimbă background-ul la albastru pentru ultima celulă */
+}
+
+/* Scalarea textului */
+.carte:hover .scoruri td {
+    transform: scale(1.2); /* Mărește textul cu 20% */
+    transition: transform 4s ease-in-out; /* Efect de tranziție pentru scalare */
+}
+
+/* Setăm un container grid pentru cărți */
+#carti {
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Setăm grid-ul pentru cărți */
+.carti-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 coloane pe toate dispozitivele */
+    gap: 10px; /* spațiu între rânduri și coloane */
+    margin: 20px;
+    counter-reset: carte; /* Inițiem counter-ul pentru numărarea cărților */
+}
+
+/* Stilizarea cărților */
+.carte {
+    border: 2px solid var(--primary-color);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: var(--colt-rotunjit);
+    color: white; /* Text alb pentru contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+    /* Setăm numărul de ordine în partea de sus a fiecărei cărți */
+    position: relative;
+}
+
+.carte::before {
+    content: counter(carte); /* Afișează numărul curent */
+    counter-increment: carte; /* Incrementăm counter-ul pentru fiecare carte */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Patternul de culori pentru grid */
+.carti-container .carte:nth-child(9n+1) {
+    background-color: #F0A500; /* C1 - galben */
+}
+
+.carti-container .carte:nth-child(9n+2) {
+    background-color: #00B5E2; /* C2 - albastru */
+}
+
+.carti-container .carte:nth-child(9n+3) {
+    background-color: #FF5F57; /* C4 - roșu */
+}
+
+.carti-container .carte:nth-child(9n+4) {
+    background-color: #F0A500; /* C1 - galben */
+}
+
+.carti-container .carte:nth-child(9n+5) {
+    background-color: #00C853; /* C3 - verde */
+}
+
+.carti-container .carte:nth-child(9n+6) {
+    background-color: #FF5F57; /* C4 - roșu */
+}
+
+.carti-container .carte:nth-child(9n+7) {
+    background-color: #F0A500; /* C1 - galben */
+}
+
+.carti-container .carte:nth-child(9n+8) {
+    background-color: #00B5E2; /* C2 - albastru */
+}
+
+.carti-container .carte:nth-child(9n+9) {
+    background-color: #FF5F57; /* C4 - roșu */
+}
+
+/* Media query pentru ecrane medii - 2 coloane */
+@media (max-width: 768px) {
+    .carti-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 coloane pe ecrane medii */
+    }
+}
+
+/* Media query pentru ecrane mici - 1 coloană */
+@media (max-width: 480px) {
+    .carti-container {
+        grid-template-columns: 1fr; /* 1 coloană pe ecrane mici */
+    }
+}
+
+/* Stilizare pentru hover pe fiecare carte */
+.carte:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
